@@ -1,0 +1,31 @@
+{
+  "name": "starter-es6-react-redux-less-express",
+  "version": "1.0.0",
+  "description": "A project with wired es6, react, redux and less, that could be used to easily start a new app",
+  "main": "server.js",
+  "scripts": {
+    "start:dev-backend": "nodemon server.js",
+    "start:dev-frontend": "cd client && npm run start:dev",
+    "start:dev": "npm-run-all --parallel start:dev-backend start:dev-frontend",
+    "start": "node server.js",
+    "postinstall": "cd client && npm install",
+    "test": "mocha test/*.spec.js"
+  },
+  "author": "Tomas Petras Rupsys <t.p.rupsys@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.4",
+    "path": "^0.12.7",
+    "redux-inject": "^1.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2"
+  }
+}
