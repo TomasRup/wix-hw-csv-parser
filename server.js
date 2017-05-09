@@ -21,7 +21,7 @@ const csvParser = require('./lib/csv')();
     app.post('/api/parsed-csv', (req, res) => csvParser
         .parse(req.body.rawCsv)
         .then(parsed => res.json(parsed))
-        .catch(err => res.status(400).send(err)));
+        .catch(err => res.status(400).send(err.message || 'Parsing failed.')));
 
     app.get('*', (req, res) => fs
             .createReadStream(path.join(__dirname, './client/index.html'))

@@ -16,17 +16,16 @@ class Table extends React.Component {
 
         return (
             <table className="uk-margin-top uk-table uk-table-divider">
-                <caption>Parsed CSV data:</caption>
-                <tbody>
-                    {rows}
-                </tbody>
+                <caption>{this.props.title}</caption>
+                <tbody>{rows}</tbody>
             </table>
         );
     }
 }
 
 Table.propTypes = {
-    data: PropTypes.array
+    data: PropTypes.array,
+    title: PropTypes.string.isRequired
 };
 
 export default Table;

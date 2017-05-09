@@ -11,16 +11,25 @@ class MainContainer extends React.Component {
 
     render() {
         return (
-            <div className="sa-main-container">
-                <TextSubmit onSubmit={this.props.csvActions.submitRawCsv} />
-                <Table data={this.props.csv.parsedTable} />
+            <div className="sa-main-container uk-position-center">
+
+                <TextSubmit
+                    onSubmit={this.props.csvActions.submitRawCsv}
+                    submitText={`Submit raw CSV`} />
+
+                <p className="uk-text-danger">{this.props.csv.parsingError}</p>
+
+                <Table
+                    title={`Parsed CSV data`}
+                    data={this.props.csv.parsedTable} />
+
             </div>
         );
     }
 }
 
 const mapStateToProps = mappedState => ({
-    csv: mappedState.csv,
+    csv: mappedState.csv
 });
 
 const mapDispatchToProps = dispatch => ({

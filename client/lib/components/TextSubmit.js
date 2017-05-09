@@ -23,24 +23,32 @@ class TextSubmit extends React.Component {
     render() {
         return (
             <div className="uk-margin-top">
-                
-                <textarea 
-                    className="uk-textarea"
-                    onChange={this.onInputChange.bind(this)}>
-                </textarea>
+                <fieldset className="uk-fieldset">
 
-                <button className="uk-button uk-button-primary"
-                        onClick={this.onInputSubmit.bind(this)}>
-                    Submit RAW csv
-                </button>
+                    <div>
+                        <textarea
+                            className="uk-textarea uk-form-width-large"
+                            rows="5"
+                            onChange={this.onInputChange.bind(this)}>
+                        </textarea>
+                    </div>
 
+                    <div>
+                        <button className="uk-button uk-button-primary uk-form-width-large"
+                                onClick={this.onInputSubmit.bind(this)}>
+                            {this.props.submitText}
+                        </button>
+                    </div>
+
+                </fieldset>
             </div>
         );
     }
 }
 
 TextSubmit.propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    submitText: PropTypes.string.isRequired
 };
 
 export default TextSubmit;
